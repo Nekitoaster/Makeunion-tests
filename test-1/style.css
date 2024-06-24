@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Monteserrat";
+  src: url("fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: rgb(253, 255, 209);
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 50px auto 35px;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #2574f4;
+}
+
+.header__user-name {
+  font-weight: normal;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px 30px;
+}
+
+.main__container {
+  display: grid;
+  grid-template:
+    "container__logo-container container__bio"
+    "container__logo-container container__contacts";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #a4c7ff;
+
+  padding: 15px 10px;
+  border-radius: 12px;
+  height: 100%;
+}
+
+.container__logo-container {
+  grid-area: container__logo-container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-right: 1px solid #2574f4;
+}
+
+.container__bio,
+.container__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 15px;
+}
+
+.container__bio {
+  grid-area: container__bio;
+  border-bottom: 1px solid #2574f4;
+}
+
+.container__contacts {
+  grid-area: container__contacts;
+  margin-top: 20px;
+}
+
+.bio__item,
+.contacts__item {
+  font-size: 18px;
+}
+
+.bio__item_title,
+.contacts__item_title {
+  border-bottom: 1px solid #222222;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: footer;
+}
+/* 
+.footer__copyright {
+} */
+
+@media (max-width: 768px) {
+  .header {
+    height: 40px;
+  }
+
+  .header__user-name {
+    font-size: 26px;
+  }
+
+  .main {
+    padding: 0px;
+  }
+
+  .main__container {
+    grid-template:
+      "container__logo-container"
+      " container__bio"
+      "container__contacts";
+    grid-template-rows: 250px min-content auto;
+    background-color: transparent;
+    gap: 10px;
+  }
+
+  .container__logo-container {
+    background-color: #a4c7ff;
+
+    border: none;
+    border-radius: 12px;
+    padding: 10px 7px;
+  }
+
+  .container__bio,
+  .container__contacts {
+    padding-left: 0px;
+  }
+
+  .container__bio {
+    padding-bottom: 7px;
+  }
+
+  .container__contacts {
+    margin-top: 0;
+  }
+
+  .bio__item,
+  .contacts__item {
+    font-size: 16px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
