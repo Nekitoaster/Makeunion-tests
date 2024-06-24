@@ -95,9 +95,6 @@ body {
   justify-content: center;
   grid-area: footer;
 }
-/* 
-.footer__copyright {
-} */
 
 @media (max-width: 768px) {
   .header {
