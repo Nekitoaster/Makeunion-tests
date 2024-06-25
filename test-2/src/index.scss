@@ -1,0 +1,174 @@
+$black-color: #222222;
+$primary-color: #ffffff;
+$secondary-color: #ffec45;
+$red-color: #e92300;
+$green-color: rgb(35, 255, 35);
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("src/assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+body {
+  background: $black-color;
+}
+
+.add-task-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: $primary-color;
+  border-bottom: 2px solid $primary-color;
+
+  .add-task-container__input-box {
+    display: flex;
+    border: 1px solid $primary-color;
+    border-radius: 12px;
+    height: 30px;
+    width: 300px;
+    overflow: hidden;
+
+    .input-box__input {
+      background: none;
+      width: 100%;
+      outline: none;
+      border: none;
+      color: $primary-color;
+      padding-inline: 5px;
+      font-size: 16px;
+    }
+    .input-box__button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $primary-color;
+      border: none;
+      width: 35px;
+      height: 100%;
+      color: $black-color;
+      font-size: 24px;
+      transition: background 300ms ease;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.todos-container {
+  margin: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: $primary-color;
+  border-radius: 12px;
+  padding: 10px 30px 10px 20px;
+  transition: background 300ms ease;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+  .todo-item-container__text {
+    word-wrap: break-word;
+  }
+
+  .todo-item-container__completed {
+    margin-left: auto;
+    display: flex;
+    .complited__checkbox {
+      cursor: pointer;
+      margin-left: 5px;
+    }
+  }
+
+  .todo-item-container__del {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: $black-color;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $red-color;
+    }
+  }
+}
+
+.green-bcg {
+  background-color: $green-color;
+}
+
+.pagination {
+  color: $primary-color;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-inline: auto;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.page-item {
+  border-radius: 50%;
+  list-style: none;
+  min-height: 31.5px;
+  min-width: 31.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $primary-color;
+  overflow: hidden;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 31.5px;
+    width: 31.5px;
+  }
+}
+
+.active {
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  color: $black-color;
+}
+
+.paginate-arrow {
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 31.5px;
+  width: 31.5px;
+  border: 1px solid $primary-color;
+  background: none;
+  color: $primary-color;
+  font-size: 20px;
+  border-radius: 50%;
+}
